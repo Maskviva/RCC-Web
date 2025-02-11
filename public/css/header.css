@@ -1,0 +1,126 @@
+.header-box {
+    display: flex;
+    align-items: center;
+}
+
+.header-box h2 {
+    margin: 0;
+    font-size: 26px;
+}
+
+.header-button {
+    background-color: #ffffff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: black;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    transition: all 0.1s ease-in-out;
+}
+
+.header-button:hover {
+    background-color: #dedede;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.header-button:active {
+    transform: translateY(2px);
+}
+
+.logo-container {
+    display: inline-block;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    aspect-ratio: 1 / 1;
+    background: #f0f3f7;
+    box-shadow:
+        inset 5px 5px 8px rgba(0, 0, 0, 0.12),
+        inset -5px -5px 8px rgba(255, 255, 255, 0.9),
+        6px 6px 16px rgba(0, 0, 0, 0.1);
+    margin: 0 10px;
+    padding: 4px;
+    border: 2px solid;
+    border-color: #e0e5ec #d0d5dc #d0d5dc #e0e5ec;
+    transition: all 0.3s ease-in-out;
+}
+
+.header-img {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-fit: contain;
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
+    transition: all 0.3s ease-in-out;
+}
+
+.login-box {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    padding: 10px;
+}
+
+.login-box a {
+    background-color: #ffffff;
+    text-decoration: none;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    transition: all 0.1s ease-in-out;
+    overflow: hidden;
+    height: 23.2px;
+    display: flex;
+    align-items: center;
+}
+
+.login-box a:hover {
+    background-color: #dedede;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.login-box a:active {
+    transform: translateY(2px);
+}
+
+.login-box a:first-child {
+    margin-right: 10px;
+}
+
+.login-box a:last-child {
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 760px) {
+    .login-box a {
+        font-size: 0;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .header-box h2 {
+        font-size: 2.6vw;
+    }
+
+    .logo-container {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .header-box h2 {
+        font-size: 0;
+    }
+}

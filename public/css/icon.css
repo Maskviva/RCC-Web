@@ -1,0 +1,147 @@
+/* 定义旋转动画 */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes rotateBack {
+    from {
+        transform: rotate(180deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+/* 定义旋转的类 */
+.icon_rotate {
+    animation: rotate 0.4s forwards;
+}
+
+.icon_rotate_back {
+    animation: rotateBack 0.4s forwards;
+}
+
+#home::before,
+#introduction::before,
+#design::before,
+#implementation::before,
+#feedback::before,
+#logout::before {
+    font-size: 18px;
+}
+
+#home::before,
+#introduction::before,
+#design::before,
+#implementation::before,
+#currentstatus::before,
+#feedback::before,
+#sponsor::before,
+#mine::before,
+#logout::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+#home:hover,
+#introduction:hover,
+#design:hover,
+#implementation:hover,
+#currentstatus:hover,
+#feedback:hover,
+#login:hover,
+#register:hover,
+#mine:hover,
+#logout:hover {
+    color: #ff6b6b;
+}
+
+#home::before {
+    font-size: 16px;
+}
+
+#implementation::before,
+#currentstatus::before,
+#sponsor::before {
+    font-size: 14.4px;
+}
+
+#home::before {
+    content: "\f015";
+}
+
+#introduction::before {
+    content: "\f550";
+}
+
+#design::before {
+    content: "\f568";
+}
+
+#implementation::before {
+    content: "\f5fc";
+}
+
+#currentstatus::before {
+    content: "\f382";
+}
+
+#feedback::before {
+    content: "\f075";
+}
+
+#mine::before {
+    content: "\f007";
+}
+
+#sponsor::before {
+    content: "\f0d6";
+    position: relative;
+    top: 5px;
+}
+
+#login::before {
+    position: relative;
+    top: -3px;
+    left: 0;
+    display: inline-block;
+    height: 18px;
+    width: 23.2px;
+    content: "";
+    background-image: url('data:image/svg+xml;charset=utf-8;base64,ICAgICA8c3ZnIGNsYXNzPSJpY29uIiBzdHlsZT0id2lkdGg6IDFlbTtoZWlnaHQ6IDFlbTt2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO2ZpbGw6IGN1cnJlbnRDb2xvcjtvdmVyZmxvdzogaGlkZGVuOyIKICAgICAgICB2aWV3Qm94PSIwIDAgMTAyNCAxMDI0IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgcC1pZD0iMjA5MyI+CiAgICAgICAgPHBhdGggZD0iTS02NjQuNTU0NjY3IDI0OS40MDgiIGZpbGw9IiNDOUM5QzkiIHAtaWQ9IjIwOTQiPjwvcGF0aD4KICAgICAgICA8cGF0aCBkPSJNLTY2NC41NTQ2NjcgMjQ5LjQwOCIgcC1pZD0iMjA5NSI+PC9wYXRoPgogICAgICAgIDxwYXRoCiAgICAgICAgICBkPSJNMzE3LjczODY2NyA1OTAuMTIyNjY3YzQxLjc0OTMzMyAwIDc4LjA4LTM2LjMzMDY2NyA3OC4wOC03OC4wOHMtMzYuMzMwNjY3LTc4LjA4LTc4LjA4LTc4LjA4LTc2LjI2NjY2NyAzNi4zMzA2NjctNzYuMjY2NjY3IDc4LjA4UzI3NS45ODkzMzMgNTkwLjEyMjY2NyAzMTcuNzM4NjY3IDU5MC4xMjI2Njd6TTUzNy40MjkzMzMgNDMzLjk2MjY2NyA5MzguNjY2NjY3IDQzMy45NjI2NjdsMCAxNTYuMTM4NjY3LTc4LjA4IDAgMCAxNTQuMzA0LTE1NC4zMDQgMEw3MDYuMjgyNjY3IDU5MC4wOGwtMTY4LjgzMiAwYy0zMC44NjkzMzMgOTAuNzk0NjY3LTExOC4wMTYgMTU0LjMwNC0yMTkuNjkwNjY3IDE1NC4zMDRDMTg4LjgyMTMzMyA3NDQuNDA1MzMzIDg1LjMzMzMzMyA2NDAuODk2IDg1LjMzMzMzMyA1MTJzMTAzLjQ4OC0yMzIuNDA1MzMzIDIzMi40MDUzMzMtMjMyLjQwNTMzM2MxMDEuNjc0NjY3IDAgMTg4LjgyMTMzMyA2My41NTIgMjE5LjY5MDY2NyAxNTQuMzA0TDUzNy40MjkzMzMgNDMzLjk2MjY2N3oiCiAgICAgICAgICBwLWlkPSIyMDk2Ij48L3BhdGg+CiAgICAgIDwvc3ZnPg==');
+    background-size: cover;
+}
+
+#register::before {
+    position: relative;
+    top: -2px;
+    left: 0;
+    display: inline-block;
+    height: 21.3px;
+    width: 24.5px;
+    content: "";
+    background-image: url('data:image/svg+xml;charset=utf-8;base64,PHN2ZyBjbGFzcz0iaWNvbiIgc3R5bGU9IndpZHRoOiAxZW07aGVpZ2h0OiAxZW07dmVydGljYWwtYWxpZ246IG1pZGRsZTtmaWxsOiBjdXJyZW50Q29sb3I7b3ZlcmZsb3c6IGhpZGRlbjsiIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBwLWlkPSI0NDU2Ij48cGF0aCBkPSJNMzIwIDMyMi4wNDhoMjg5Ljc5MmExOS45NjggMTkuOTY4IDAgMCAwIDIxLjUwNC0yMC45OTJWMjQxLjY2NGExOS45NjggMTkuOTY4IDAgMCAwLTIxLjUwNC0yMC45OTJoLTI1LjZhMTI4IDEyOCAwIDAgMC0xMTkuMjk2LTg4LjU3NiAxMjggMTI4IDAgMCAwLTExOS4yOTYgODguNTc2aC0yNS42YTE5Ljk2OCAxOS45NjggMCAwIDAtMjEuNTA0IDIwLjk5MnY1OS4zOTJhMjIuNTI4IDIyLjUyOCAwIDAgMCAyMS41MDQgMjAuOTkyeiBtMTQ0Ljg5Ni0xNTMuNmE1MS4yIDUxLjIgMCAwIDEgNTEuMiA1MS4yIDUxLjIgNTEuMiAwIDAgMS0xMDIuNCAwIDUxLjIgNTEuMiAwIDAgMSA1MS4yLTQ5LjY2NHoiIGZpbGw9IiIgcC1pZD0iNDQ1NyI+PC9wYXRoPjxwYXRoIGQ9Ik03MTYuOCAyMjYuODE2aC02MC40MTZ2MTIwLjgzMkgyNzIuODk2VjIyNi44MTZIMjA4LjM4NGE1MS4yIDUxLjIgMCAwIDAtNTEuMiA1MS4ydjU1OC41OTJhNTYuODMyIDU2LjgzMiAwIDAgMCA1Ni4zMiA1NS4yOTZINzE2LjhhNTYuODMyIDU2LjgzMiAwIDAgMCA1Ni4zMi01NS4yOTZWMjc4LjAxNmE1OS45MDQgNTkuOTA0IDAgMCAwLTU2LjMyLTUxLjJ6IG0tODYuMDE2IDUzMS45NjhIMzI3LjE2OGEyOC42NzIgMjguNjcyIDAgMCAxIDAtNTYuODMyaDMwNC4xMjhhMjguNjcyIDI4LjY3MiAwIDAgMSAwIDU2LjgzMnogbTAtMTE4Ljc4NEgzMjcuMTY4YTI4LjY3MiAyOC42NzIgMCAwIDEgMC01Ni44MzJoMzA0LjEyOGEyOC42NzIgMjguNjcyIDAgMCAxIDAgNTYuODMyeiBtMC0xMTguNzg0SDMyNy4xNjhhMjguNjcyIDI4LjY3MiAwIDAgMSAwLTU2LjgzMmgzMDQuMTI4YTI4LjY3MiAyOC42NzIgMCAwIDEgMCA1Ni44MzJ6IiBmaWxsPSIiIHAtaWQ9IjQ0NTgiPjwvcGF0aD48L3N2Zz4=');
+    background-size: cover;
+}
+
+#logout::before {
+    content: "\f2f5";
+    margin-right: 0;
+}
+
+#arrow {
+    height: 16.8px;
+    position: relative;
+    top: 5px;
+    left: -15px;
+    margin-left: auto;
+    /* 将箭头推到最右侧 */
+}

@@ -1,0 +1,133 @@
+@keyframes sidebar_slideIn {
+    0% {
+        transform: translateX(-25%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+/* 定义一个 CSS 动画 */
+@keyframes nav_slideIn {
+    from {
+        margin-left: -250px;
+    }
+
+    to {
+        margin-left: 0;
+    }
+}
+
+@keyframes nav_slideOut {
+    from {
+        margin-left: 0;
+    }
+
+    to {
+        margin-left: -250px;
+    }
+}
+
+.main-nav {
+    width: 220px;
+    height: 100%;
+    border-right: 1px solid rgb(207, 207, 207);
+    -webkit-backdrop-filter: blur(5px) brightness(80%);
+    /* 添加这一行 */
+    backdrop-filter: blur(5px) brightness(80%);
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: margin-left 0.5s ease;
+    /* 固定位置 */
+}
+
+.main-nav.show {
+    margin-left: 0;
+    animation: nav_slideIn 0.5s forwards;
+}
+
+.main-nav.hide {
+    margin-left: -250px;
+    animation: nav_slideOut 0.5s forwards;
+}
+
+.main-nav-list {
+    height: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav-item {
+    background-color: rgba(255, 255, 255, 0.6);
+    opacity: 0;
+    align-items: center;
+    cursor: pointer;
+}
+
+#mian-nav-title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-bottom: 1px solid rgb(207, 207, 207);
+    color: rgb(0, 0, 0);
+    cursor: default;
+}
+
+.main-nav-hr {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.main-nav-link {
+    text-decoration: none;
+    color: black;
+    padding: 10px 0 10px 30px;
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    /* 确保padding不会导致元素超出宽度 */
+    transition: all 0.2s ease-in-out;
+}
+
+.main-nav-link:hover {
+    background-color: rgb(207, 207, 207, 0.5);
+}
+
+.submenu {
+    list-style: none;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 0;
+    transition: add 0.5s ease-in-out;
+}
+
+.sidebar_show {
+    animation: sidebar_slideIn 0.5s ease-in-out;
+}
+
+.submenu a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    display: block;
+    border-bottom: 1px solid rgb(207, 207, 207);
+    border-top: 1px solid rgb(207, 207, 207);
+}
+
+.submenu a:hover {
+    color: rgb(4, 195, 195);
+    background-color: rgb(207, 207, 207, 0.5);
+}

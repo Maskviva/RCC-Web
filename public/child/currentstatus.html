@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="stylesheet" id="my-style-sheet" href="../../style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <title>Redstone Circuit Communication</title>
+</head>
+
+<body>
+    <header>
+        <div class="header-box">
+            <button class="header-button" onclick="toggleMenu()" aria-label="Toggle Menu"><i
+                    class="fas fa-bars"></i></button>
+            <div class="logo-container">
+                <img src="../../logo.png" class="header-img" alt="Redstone Circuit Communication Logo">
+            </div>
+            <h2>Redstone Circuit Communication</h2>
+        </div>
+        <div class="login-box">
+            <a id="login" href="/login">登录</a>
+            <a id="register" href="/register">注册</a>
+            <a id="logout" style="display: none;" href="javascript:(0)" onclick="logout()">注销</a>
+        </div>
+    </header>
+
+    <main id="main">
+        <nav class="main-nav" id="main-nav">
+            <ul class="main-nav-list">
+                <li id="mian-nav-title-box" class="main-nav-item">
+                    <a id="mian-nav-title">RCC</a>
+                </li>
+                <li class="main-nav-item">
+                    <a id="home" class="main-nav-link" href="/">首页</a>
+                </li>
+                <li id="parent-item" class="main-nav-item">
+                    <a id="introduction" class="main-nav-link">介绍<i id="arrow" class="fas fa-angle-down"></i></a>
+                    <ul class="submenu">
+                        <li><a href="#">关于服务器</a></li>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="https://qm.qq.com/q/OQirPtDl2U">加入我们</a></li>
+                    </ul>
+                </li>
+                <li id="parent-item" class="main-nav-item">
+                    <a id="design" class="main-nav-link">常用链接<i id="arrow" class="fas fa-angle-down"></i></a>
+                    <ul class="submenu">
+                        <li><a href="#">MC红石社区</a></li>
+                        <li><a href="#">MC论坛社区</a></li>
+                        <li><a href="#">资源下载</a></li>
+                    </ul>
+                </li>
+                <li id="choosed" class="main-nav-item">
+                    <a id="currentstatus" class="main-nav-link" href="#">服务器状态</a>
+                </li>
+                <li class="main-nav-item">
+                    <a id="feedback" class="main-nav-link" href="/feedback">反馈</a>
+                </li>
+                <li class="main-nav-item">
+                    <a id="sponsor" class="main-nav-link" href="https://afdian.com/a/Maskviva/plan">赞助</a>
+                </li>
+                <hr class="main-nav-hr">
+                <li class="main-nav-item">
+                    <a id="mine" style="display: none;" class="main-nav-link" href="/mine">我的</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            <section class="section" style="flex-direction: column;">
+                <iframe style="margin-left: auto; margin-right: auto; position: relative; top: 25vh;" title="服务器状态"
+                    frameborder="no" marginwidth="0" marginheight="0" width="370px" height="195px" scrolling="no"
+                    src="//47.97.159.109:8080/iframe.html?ip=ad.rainplay.cn&amp;port=55914&amp;dark=false"></iframe>
+                <a style="margin-left: auto; margin-right: auto; position: relative; top: 25vh; text-decoration: none; 
+                color: #000000; font-size: 20px; font-weight: bold; text-align: center; border: 2px solid #000000; padding: 10px; border-radius: 5px;
+                background-color: rgba(255, 255, 255, 0.8); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);"
+                    href="minecraft://?addExternalServer=RCC服务器|ad.rainplay.cn:55914">加入服务器</a>
+            </section>
+        </div>
+    </main>
+    <script src="../script/navbar.js"></script>
+    <script src="../script/verifyCookie.js"></script>
+
+    <script>
+        verifyCookie().then(res => {
+            if (res.success) {
+                document.getElementById("mine").style.display = "flex";
+                document.getElementById("login").style.display = "none";
+                document.getElementById("register").style.display = "none";
+                document.getElementById("logout").style.display = "flex";
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <link rel="stylesheet" id="my-style-sheet" href="../style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <link rel="shortcut icon" href="../favicon.ico">
+  <title>Redstone Circuit Communication</title>
+
+  <style>
+    .login {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .login-container {
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      width: 700px;
+      padding: 20px;
+      box-sizing: border-box;
+      transition: all 0.3s ease-in-out;
+    }
+
+    @media screen and (max-width: 932px) {
+      .login-container {
+        width: 80%;
+        min-width: 340px;
+      }
+    }
+
+    .login-container h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .form-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      flex: 0.35;
+      color: #555;
+      font-size: 14px;
+      margin-right: 10px;
+      text-align: left;
+    }
+
+    .form-group input {
+      flex: 3;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    @media screen and (max-width: 932px) {
+      .form-group input {
+        flex: 1;
+      }
+    }
+
+    .form-group input:focus {
+      border-color: #007bff;
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+    }
+
+    .send-captcha-btn {
+      width: 104px;
+      background-color: #459efd;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      margin-left: auto;
+      margin-bottom: 13px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .form-group .send-captcha-btn:hover {
+      background-color: #2a7ae8;
+    }
+
+    .form-actions {
+      display: flex;
+    }
+
+    .form-actions-link {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+      color: #4561fd;
+      flex: 0.8;
+    }
+
+    .form-actions-link p {
+      color: #4561fd;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    .form-actions-link p a {
+      text-decoration: none;
+      color: #4561fd;
+    }
+
+    .form-actions-link p a:hover {
+      color: #9c2ae8;
+      text-decoration: underline;
+    }
+
+    .form-actions .header-button {
+      margin-left: auto;
+      background-color: #459efd;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .form-actions .header-button:hover {
+      background-color: #2a7ae8;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header-box">
+      <button type="button" class="header-button" onclick="toggleMenu()" aria-label="Toggle Menu"><i
+          class="fas fa-bars"></i></button>
+      <div class="logo-container">
+        <img src="../logo.png" class="header-img" alt="Redstone Circuit Communication Logo">
+      </div>
+      <h2>Redstone Circuit Communication</h2>
+    </div>
+    <div class="login-box">
+      <a id="login" href="#">登录</a>
+      <a id="register" href="/register">注册</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <nav class="main-nav" id="main-nav">
+      <ul class="main-nav-list">
+        <li id="mian-nav-title-box" class="main-nav-item">
+          <a id="mian-nav-title">RCC</a>
+        </li>
+        <li class="main-nav-item">
+          <a id="home" class="main-nav-link" href="/">首页</a>
+        </li>
+        <li id="parent-item" class="main-nav-item">
+          <a id="introduction" class="main-nav-link">介绍<i id="arrow" class="fas fa-angle-down"></i></a>
+          <ul class="submenu">
+            <li><a href="#">关于服务器</a></li>
+            <li><a href="#">关于我们</a></li>
+            <li><a href="https://qm.qq.com/q/OQirPtDl2U">加入我们</a></li>
+          </ul>
+        </li>
+        <li id="parent-item" class="main-nav-item">
+          <a id="design" class="main-nav-link">常用链接<i id="arrow" class="fas fa-angle-down"></i></a>
+          <ul class="submenu">
+            <li><a href="#">MC红石社区</a></li>
+            <li><a href="#">MC论坛社区</a></li>
+            <li><a href="#">资源下载</a></li>
+          </ul>
+        </li>
+        <li class="main-nav-item">
+          <a id="currentstatus" class="main-nav-link" href="/currentstatus">服务器状态</a>
+        </li>
+        <li class="main-nav-item">
+          <a id="feedback" class="main-nav-link" href="/feedback">反馈</a>
+        </li>
+        <li class="main-nav-item">
+          <a id="sponsor" class="main-nav-link" href="https://afdian.com/a/Maskviva/plan">赞助</a>
+        </li>
+        <hr class="main-nav-hr">
+        <li class="main-nav-item">
+          <a id="mine" style="display: none;" class="main-nav-link" href="/mine">我的</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="content">
+      <section class="section">
+        <div class="login">
+          <div class="login-container">
+            <h1>登录</h1>
+            <div class="form-group">
+              <label for="username">用户名:</label>
+              <input type="text" id="username" name="username" required placeholder="请输入用户名">
+            </div>
+
+            <div class="form-group">
+              <label for="password">密码:</label>
+              <input type="password" id="password" name="password" required placeholder="请输入密码">
+            </div>
+            <p style="margin: 0; margin-left: auto; display: none; padding: 0;" id="captcha-error"></p>
+
+            <div class="form-actions">
+              <div class="form-actions-link">
+                <p>没有账号? <a href="/register">注册一个!</a></p>
+                <p><a href="/forget">忘记密码?</a></p>
+              </div>
+              <input id="register-button" class="header-button" type="submit" value="登录">
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="../script/navbar.js"></script>
+
+  <script>
+    const host = window.location.host;
+    const url = `http://${host}/`;
+
+    $('#register-button').click(function () {
+      const captchaError = $('#captcha-error');
+      $.ajax({
+        url: url + 'login',
+        type: 'POST',
+        data: {
+          username: $('#username').val(),
+          password: $('#password').val()
+        },
+        success: function (data) {
+          if (data.success) {
+            console.log(data)
+            window.location.href = '../index.html'
+            captchaError.css('display', 'block');
+            captchaError.css('color', 'green');
+            captchaError.text('登录成功');
+          } else {
+            captchaError.css('display', 'block');
+            captchaError.css('color', 'red');
+            captchaError.text(`${data.message}`);
+          }
+        },
+        error: function (xhr, status, error) {
+          captchaError.css('display', 'block');
+          captchaError.css('color', 'red');
+          captchaError.text('登录失败，请稍后再试');
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

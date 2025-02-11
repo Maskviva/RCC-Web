@@ -1,0 +1,62 @@
+/* 图标 */
+@import url('css/icon.css');
+
+/* 头部 */
+@import url('css/header.css');
+
+/* 侧边栏 */
+@import url('css/sidebar.css');
+
+/* 内容 */
+@import url('css/content.css');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-size: cover;
+    /* 背景图覆盖整个页面 */
+    background-attachment: fixed;
+    /* 背景图固定不动 */
+    background-size: cover;
+}
+
+@media screen and (min-width: 721px) {
+    body {
+        background-image: url('https://moe.jitsu.top/img/?sort=pc');
+    }
+}
+
+@media screen and (max-width: 720px) {
+    body {
+        background-image: url('https://moe.jitsu.top/img/?sort=mp');
+    }
+}
+
+header {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(237, 237, 237, 0.8);
+    -webkit-backdrop-filter: blur(5px) brightness(80%);
+    backdrop-filter: blur(5px) brightness(80%);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+#main {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
+    overflow: hidden;
+
+    /* 调整为两列布局 */
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
